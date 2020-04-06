@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: "Bangers";
+}
+
+/* Main page */
+.main {
+  height: 100%;
+  width: 100%;
+  background-image: url("img/bg-main.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.picker {
+  width: 320px;
+  height: 320px;
+  border-radius: 20px;
+  border: 10px solid palevioletred;
+  margin: 2rem;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.7);
+}
+
+.picker .pick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.picker:first-child {
+  background-image: url("img/Frozen.jpg");
+}
+.picker:nth-child(2) {
+  background-image: url("img/Disney-Princess.jpg");
+}
+.picker:last-child {
+  background-image: url("img/Tangled.jpg");
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-frozen {
+  background-image: url("img-frozen/bg.jpg");
+}
+.bg-tangled {
+  background-image: url("img-tangled/bg.jpg");
+}
+.bg-princess {
+  background-image: url("img-princess/bg.jpg");
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.overlay .counter {
+  color: #ffffff;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-size: 8rem;
+}
+
+.congrats {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.5s ease-in;
+}
+
+.congrats.show {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.congrats .inner-wrapper {
+  height: 90%;
+  width: 90%;
+  background: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("img/congrats.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.congrats .inner-wrapper h1 {
+  text-align: center;
+  font-size: 7rem;
+  color: deeppink;
+}
+
+.congrats .inner-wrapper .play-again {
+  width: 400px;
+  height: 200px;
+  align-self: center;
+  text-align: center;
+  margin-top: 2rem;
+  border-radius: 40px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: dodgerblue;
+  background-color: aliceblue;
+  border: 5px solid dodgerblue;
+  cursor: pointer;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.congrats .inner-wrapper .play-again .redo {
+  display: block;
+  margin-top: 1rem;
+}
+
+.congrats .inner-wrapper .play-again:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+.congrats .inner-wrapper .else {
+  text-align: center;
+  width: 100%;
+  font-size: 2.5rem;
+  color: greenyellow;
+  letter-spacing: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.congrats .inner-wrapper .else .games {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.congrats .inner-wrapper .else .game {
+  width: 150px;
+  height: 150px;
+  border: 5px solid palevioletred;
+  border-radius: 10px;
+  margin: 1rem;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+}
+.congrats .inner-wrapper .else .game.game-1 {
+  background-image: url("img/Frozen.jpg");
+}
+.congrats .inner-wrapper .else .game.game-2 {
+  background-image: url("img/Tangled.jpg");
+}
+.congrats .inner-wrapper .else .game.game-3 {
+  background-image: url("img/Disney-Princess.jpg");
+}
+
+.congrats .inner-wrapper .else .game a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.memory-game {
+  width: 80%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memo-card {
+  position: relative;
+  width: 12.5%;
+  height: 16.166%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: all 0.5 ease;
+}
+
+.memo-card:active {
+  transform: scale(0.97);
+  transition: all 0.5 ease;
+}
+
+.memo-card img {
+  width: 120px;
+}
+
+.memo-card .front,
+.memo-card .back {
+  position: absolute;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.memo-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memo-card .front {
+  transform: rotateY(180deg);
+}
+
+@media (max-height: 748px) {
+  .memo-card img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .memory-game {
+    width: 90%;
+    height: 100%;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .memo-card img {
+    width: 100px;
+  }
+
+  .overlay .counter {
+    color: #ffffff;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 4rem;
+  }
+}
