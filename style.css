@@ -259,6 +259,10 @@ body {
   transform: rotateY(180deg);
 }
 
+.memo-card.flip .front {
+  z-index: 1;
+}
+
 @media (max-height: 748px) {
   .memo-card img {
     width: 100px;
