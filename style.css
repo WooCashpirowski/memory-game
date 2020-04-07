@@ -228,12 +228,11 @@ body {
   cursor: pointer;
   transform: scale(1);
   transform-style: preserve-3d;
-  transition: all 0.5 ease;
+  transition: transform 0.3s;
 }
 
 .memo-card:active {
   transform: scale(0.97);
-  transition: all 0.5 ease;
 }
 
 .memo-card img {
@@ -250,6 +249,10 @@ body {
 
 .memo-card.flip {
   transform: rotateY(180deg);
+}
+
+.memo-card.flip .back {
+  z-index: -1;
 }
 
 .memo-card .front {
