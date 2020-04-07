@@ -253,6 +253,7 @@ body {
 
 .memo-card.flip .back {
   z-index: -1;
+  visibility: hidden;
 }
 
 .memo-card .front {
